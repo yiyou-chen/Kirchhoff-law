@@ -1,0 +1,72 @@
+AUTHOR: Yiyou(Gerry) Chen
+EMAIL: gerry99@ucla.edu
+DATE: 03/31/2020
+
+Description:
+A simple Kirchhoff law solver for physical circuits with batteries and resistors.
+
+**limitation**
+Not able to solve complex mixed circuits like the following (difficult to read
+the 1ohm input):
+---------|:|: ------
+|                  |
+| 		 **1ohm**                  
+| 		   |
+--------2ohm--------
+|                  |
+|		   |
+--------|:----------
+
+but is able to solve any circuits with any number of parrallel loops:
+---------|:|: ------
+|                  |
+| 		   |                 
+| 		   |
+--------2ohm--------
+|                  |
+|		   |
+--------|:----------
+
+
+Instruction: 
+When typing in the things, please follow the order which assumes current flow from left to right! When typing in voltage, please be careful about the directions:
+
+If your voltage looks like this:
+
+     5v
+
+--------|!|!-------- ------> I Please type in V -5
+
+If your voltage looks like this:
+
+     5v
+
+--------!|!|-------- ------> I Please type in V 5
+
+For any resistance connected, please type in R 5 (if the resistance is 5 ohm)
+
+Here's an complete example:
+
+     5v
+
+:--------!|!|--------: : 2v : :-----3ohm --|!|!----: : : :-------2ohm---------:
+
+number of things in loop1: 1 things: V 5 number of things in loop2: 2 things: R 3 V -2 number of things in loop3: 1 things: R 2
+
+
+
+The tarball contains the following:
+Kirchhoff.cpp: C++ source code
+Makefile:
+	build: building the executable
+	run: build and run
+	clean: clean up the executables and the .tar.gz files
+	dist: create the tarball
+README
+
+
+
+If you still have any concerns about input or discover any bugs, please email me: gerry99@ucla.edu
+
+Thank you very much and please enjoy!
+
